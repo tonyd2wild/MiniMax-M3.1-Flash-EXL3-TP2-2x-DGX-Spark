@@ -1,0 +1,89 @@
+From 0bd44c6661c988e7cf79791e503cdba7c5786cdd Mon Sep 17 00:00:00 2001
+From: tonyd2wild <tonyd2wild@users.noreply.github.com>
+Date: Sat, 24 Oct 2026 00:57:13 -0400
+Subject: [PATCH] MiniMax-M3 fused qkv+indexer: TP>1 support (index_q rows per
+ rank, index_k replicated)
+
+---
+ src/vllm_exl3/exl3.py | 44 ++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 35 insertions(+), 9 deletions(-)
+
+diff --git a/src/vllm_exl3/exl3.py b/src/vllm_exl3/exl3.py
+index d2be348..803a437 100644
+--- a/src/vllm_exl3/exl3.py
++++ b/src/vllm_exl3/exl3.py
+@@ -1893,6 +1893,29 @@ def dequant_minimax_indexer(
+     return weight.reshape(out_rows, in_cols).to(torch.bfloat16)
+ 
+ 
++def _indexer_rows_for_rank(
++    t: torch.Tensor, expected_rows: int, tp_rank: int, tp_size: int, shard_idx: int
++) -> torch.Tensor:
++    """This rank's output rows of a MiniMax indexer shard (MXFP8 payload or E8M0 scales).
++
++    vLLM's MinimaxM3QKVParallelLinearWithIndexer shards index_q like the KV heads
++    (replicating heads when tp_size exceeds their count) and replicates index_k, a
++    single head, so the row rule is the bf16 QKV weight path's: expected_rows is the
++    shard's output_partition_size on this rank.
++    """
++    rows = int(t.shape[0])
++    if rows == expected_rows:
++        return t
++    if expected_rows <= 0 or rows % expected_rows:
++        raise RuntimeError(
++            f"EXL3 indexer shard {shard_idx}: {rows} rows do not split into "
++            f"{expected_rows}-row TP shards (tp_size={tp_size})"
++        )
++    shard_tp_size = rows // expected_rows
++    shard_tp_rank = tp_rank // max(1, tp_size // shard_tp_size)
++    return t.narrow(0, shard_tp_rank * expected_rows, expected_rows).contiguous()
++
++
+ def _indexer_mxfp8_enabled() -> bool:
+     """Whether VLLM_EXL3_INDEXER_MXFP8 keeps the indexer shards in MXFP8.
+ 
+@@ -5896,13 +5919,8 @@ class Exl3LinearMethod(LinearMethodBase):
+         # output slice lands in the fused [q | k | v | index_q | index_k]
+         # layout (vllm linear.py MinimaxM3QKVParallelLinearWithIndexer).
+         indexer_shards = self._indexer_shards(layer, n_shards)
+-        if indexer_shards:
+-            _, tp_size = _resolve_tp_geometry(layer)
+-            if tp_size > 1:
+-                raise RuntimeError(
+-                    "EXL3 MiniMax indexer shards are not supported with "
+-                    f"TP size > 1; tp_size={tp_size}"
+-                )
++        # TP > 1: the indexer payloads and E8M0 scales are cut to this rank's
++        # rows at load (_indexer_rows_for_rank), matching vLLM's fused layout.
+         # Unified BF16-staging shard list: config bf16 shards plus the
+         # dequantized indexer shards, in ascending order (the apply-side row
+         # offsets and the staging allocation must agree on this ordering).
+@@ -6192,7 +6210,11 @@ class Exl3LinearMethod(LinearMethodBase):
+                         f"suffix {suffix!r}, expected 'weight'"
+                     )
+                 slot = indexer_shards.index(shard_idx)
+-                payload = loaded_weight.detach().contiguous()
++                _ix_rank, _ix_size = _resolve_tp_geometry(layer, param)
++                payload = _indexer_rows_for_rank(
++                    loaded_weight.detach().contiguous(),
++                    output_partition_sizes[shard_idx], _ix_rank, _ix_size, shard_idx,
++                )
+                 if layer._exl3_indexer_payloads[slot] is not None:
+                     raise RuntimeError(
+                         f"EXL3 indexer shard {shard_idx} payload loaded twice"
+@@ -6357,7 +6379,11 @@ class Exl3LinearMethod(LinearMethodBase):
+                 raise RuntimeError(
+                     f"EXL3 indexer shard {shard_idx} scale loaded twice"
+                 )
+-            layer._exl3_indexer_scales[slot] = loaded_weight.detach().contiguous()
++            _ix_rank, _ix_size = _resolve_tp_geometry(layer, param)
++            layer._exl3_indexer_scales[slot] = _indexer_rows_for_rank(
++                loaded_weight.detach().contiguous(),
++                output_partition_sizes[shard_idx], _ix_rank, _ix_size, shard_idx,
++            )
+ 
+         return scale_loader
+ 
+-- 
+2.50.1 (Apple Git-155)
+
