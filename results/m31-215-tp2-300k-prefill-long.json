@@ -1,0 +1,29 @@
+{
+  "model": "minimax-m3.1-flash",
+  "label": "m31-215-tp2-300k-prefill-long",
+  "started": "2026-10-24 07:11:35",
+  "url": "http://127.0.0.1:8000",
+  "effort": null,
+  "reps": 3,
+  "rounds": 3,
+  "meta": {
+    "num_gpu_blocks": 5677,
+    "block_size": 128,
+    "kv_pool_tokens": 726656,
+    "preemptions_total": 0.0
+  },
+  "prefill": {
+    "43000": {
+      "prompt_tokens": 128206,
+      "ttft_s": 255.901,
+      "prefill_tok_s": 501.0
+    }
+  },
+  "meta_end": {
+    "num_gpu_blocks": 5677,
+    "block_size": 128,
+    "kv_pool_tokens": 726656,
+    "preemptions_total": 0.0
+  },
+  "finished": "2026-10-24 07:15:59"
+}

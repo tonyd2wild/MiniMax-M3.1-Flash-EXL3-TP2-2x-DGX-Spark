@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="402" viewBox="0 0 900 402" role="img" aria-label="Single-stream decode by prompt (tok/s)">
+<rect width="900" height="402" fill="#1a1a19"/>
+<text x="24.0" y="30.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="16" fill="#ffffff" text-anchor="start" font-weight="600">Single-stream decode by prompt (tok/s)</text>
+<text x="24.0" y="50.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">median; DSpark acceptance drives the spread (prose ~2 tokens/step, code ~3)</text>
+<line x1="150.0" x2="150.0" y1="64" y2="350" stroke="#383835" stroke-width="1"/>
+<text x="150.0" y="366.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">0</text>
+<line x1="282.0" x2="282.0" y1="64" y2="350" stroke="#2c2c2a" stroke-width="1"/>
+<text x="282.0" y="366.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">10</text>
+<line x1="414.0" x2="414.0" y1="64" y2="350" stroke="#2c2c2a" stroke-width="1"/>
+<text x="414.0" y="366.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">20</text>
+<line x1="546.0" x2="546.0" y1="64" y2="350" stroke="#2c2c2a" stroke-width="1"/>
+<text x="546.0" y="366.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">30</text>
+<line x1="678.0" x2="678.0" y1="64" y2="350" stroke="#2c2c2a" stroke-width="1"/>
+<text x="678.0" y="366.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">40</text>
+<line x1="810.0" x2="810.0" y1="64" y2="350" stroke="#2c2c2a" stroke-width="1"/>
+<text x="810.0" y="366.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">50</text>
+<text x="140.0" y="82.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">count to 300</text>
+<path d="M150,69.0 H666.3 Q670.3,69.0 670.3,73.0 V81.0 Q670.3,85.0 666.3,85.0 H150 Z" fill="#3987e5"/>
+<text x="676.3" y="82.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">39.4</text>
+<text x="140.0" y="108.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">count to 100</text>
+<path d="M150,95.0 H648.7 Q652.7,95.0 652.7,99.0 V107.0 Q652.7,111.0 648.7,111.0 H150 Z" fill="#3987e5"/>
+<text x="658.7" y="108.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">38.1</text>
+<text x="140.0" y="134.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">tool call</text>
+<path d="M150,121.0 H591.5 Q595.5,121.0 595.5,125.0 V133.0 Q595.5,137.0 591.5,137.0 H150 Z" fill="#3987e5"/>
+<text x="601.5" y="134.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">33.8</text>
+<text x="140.0" y="160.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">json</text>
+<path d="M150,147.0 H565.8 Q569.8,147.0 569.8,151.0 V159.0 Q569.8,163.0 565.8,163.0 H150 Z" fill="#3987e5"/>
+<text x="575.8" y="160.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">31.8</text>
+<text x="140.0" y="186.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">structured (YAML)</text>
+<path d="M150,173.0 H555.3 Q559.3,173.0 559.3,177.0 V185.0 Q559.3,189.0 555.3,189.0 H150 Z" fill="#3987e5"/>
+<text x="565.3" y="186.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">31.0</text>
+<text x="140.0" y="212.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">code</text>
+<path d="M150,199.0 H547.0 Q551.0,199.0 551.0,203.0 V211.0 Q551.0,215.0 547.0,215.0 H150 Z" fill="#3987e5"/>
+<text x="557.0" y="212.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">30.4</text>
+<text x="140.0" y="238.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">sql</text>
+<path d="M150,225.0 H533.7 Q537.7,225.0 537.7,229.0 V237.0 Q537.7,241.0 533.7,241.0 H150 Z" fill="#3987e5"/>
+<text x="543.7" y="238.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">29.4</text>
+<text x="140.0" y="264.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">math</text>
+<path d="M150,251.0 H520.9 Q524.9,251.0 524.9,255.0 V263.0 Q524.9,267.0 520.9,267.0 H150 Z" fill="#3987e5"/>
+<text x="530.9" y="264.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">28.4</text>
+<text x="140.0" y="290.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">prose</text>
+<path d="M150,277.0 H407.9 Q411.9,277.0 411.9,281.0 V289.0 Q411.9,293.0 407.9,293.0 H150 Z" fill="#3987e5"/>
+<text x="417.9" y="290.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">19.8</text>
+<text x="140.0" y="316.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">narrative</text>
+<path d="M150,303.0 H405.5 Q409.5,303.0 409.5,307.0 V315.0 Q409.5,319.0 405.5,319.0 H150 Z" fill="#3987e5"/>
+<text x="415.5" y="316.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">19.7</text>
+<text x="140.0" y="342.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="end" font-weight="normal">summary</text>
+<path d="M150,329.0 H403.1 Q407.1,329.0 407.1,333.0 V341.0 Q407.1,345.0 403.1,345.0 H150 Z" fill="#3987e5"/>
+<text x="413.1" y="342.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="start" font-weight="600">19.5</text>
+<text x="24.0" y="394.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="start" font-weight="normal">MiniMax-M3.1-Flash EXL3 SAGE 2.15 bpw, TP2 on 2x DGX Spark, DSpark k=3, temperature 0, 2026-10-24</text>
+</svg>

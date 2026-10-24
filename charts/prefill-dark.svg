@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="318" viewBox="0 0 900 318" role="img" aria-label="Cold prefill (tok/s)">
+<rect width="900" height="318" fill="#1a1a19"/>
+<text x="24.0" y="30.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="16" fill="#ffffff" text-anchor="start" font-weight="600">Cold prefill (tok/s)</text>
+<text x="24.0" y="50.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12" fill="#c3c2b7" text-anchor="start" font-weight="normal">salted prompt, 1 output token; TTFT under each bar</text>
+<line x1="64" x2="864" y1="252.0" y2="252.0" stroke="#383835" stroke-width="1"/>
+<text x="56.0" y="256.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="end" font-weight="normal">0</text>
+<line x1="64" x2="864" y1="209.5" y2="209.5" stroke="#2c2c2a" stroke-width="1"/>
+<text x="56.0" y="213.5" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="end" font-weight="normal">200</text>
+<line x1="64" x2="864" y1="167.0" y2="167.0" stroke="#2c2c2a" stroke-width="1"/>
+<text x="56.0" y="171.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="end" font-weight="normal">400</text>
+<line x1="64" x2="864" y1="124.5" y2="124.5" stroke="#2c2c2a" stroke-width="1"/>
+<text x="56.0" y="128.5" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="end" font-weight="normal">600</text>
+<line x1="64" x2="864" y1="82.0" y2="82.0" stroke="#2c2c2a" stroke-width="1"/>
+<text x="56.0" y="86.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="end" font-weight="normal">800</text>
+<path d="M132.0,252.0 V135.7 Q132.0,131.7 136.0,131.7 H192.0 Q196.0,131.7 196.0,135.7 V252.0 Z" fill="#3987e5"/>
+<text x="164.0" y="125.7" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">566</text>
+<text x="164.0" y="270.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">5,350 tok</text>
+<text x="164.0" y="286.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">TTFT 9.4 s</text>
+<path d="M332.0,252.0 V135.6 Q332.0,131.6 336.0,131.6 H392.0 Q396.0,131.6 396.0,135.6 V252.0 Z" fill="#3987e5"/>
+<text x="364.0" y="125.6" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">567</text>
+<text x="364.0" y="270.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">23,782 tok</text>
+<text x="364.0" y="286.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">TTFT 42.0 s</text>
+<path d="M532.0,252.0 V144.0 Q532.0,140.0 536.0,140.0 H592.0 Q596.0,140.0 596.0,144.0 V252.0 Z" fill="#3987e5"/>
+<text x="564.0" y="134.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">527</text>
+<text x="564.0" y="270.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">97,510 tok</text>
+<text x="564.0" y="286.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">TTFT 185.0 s</text>
+<path d="M732.0,252.0 V149.5 Q732.0,145.5 736.0,145.5 H792.0 Q796.0,145.5 796.0,149.5 V252.0 Z" fill="#3987e5"/>
+<text x="764.0" y="139.5" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">501</text>
+<text x="764.0" y="270.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="11" fill="#c3c2b7" text-anchor="middle" font-weight="normal">128,206 tok</text>
+<text x="764.0" y="286.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="middle" font-weight="normal">TTFT 255.9 s</text>
+<text x="24.0" y="310.0" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="10" fill="#898781" text-anchor="start" font-weight="normal">MiniMax-M3.1-Flash EXL3 SAGE 2.15 bpw, TP2 on 2x DGX Spark, DSpark k=3, temperature 0, 2026-10-24</text>
+</svg>
