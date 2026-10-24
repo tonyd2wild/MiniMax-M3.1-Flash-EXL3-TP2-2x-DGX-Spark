@@ -174,6 +174,5 @@ The lane is text only: the 2.15 bpw pack has no vision-tower weights.
 | `bench/smoke.py` | four-question correctness check |
 | `results/` | raw JSON from the benchmark runs; `summary.json` merges the main run with the separate 128K prefill run |
 | `charts/` | the README charts (light + dark SVG) and `make_charts.py` that draws them from `results/summary.json` |
-| `STATUS-2026-10-24.md` | fleet state on the day, what was done, open items |
 
 Licensing: the patches are AGPL-3.0-only because the plugin is; everything else here is MIT.
